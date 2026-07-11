@@ -41,13 +41,12 @@ final class Module_Lounge extends GDO_Module
 	##############
 	### Module ###
 	##############
-	public function getClasses(): array
-	{
-		return [
-		];
-	}
+	public function getDependencies(): array
+    {
+        return ['Cronjob'];
+    }
 
-	public function onLoadLanguage(): void { $this->loadLanguage('lang/lounge'); }
+    public function onLoadLanguage(): void { $this->loadLanguage('lang/lounge'); }
 
 
 	##############
