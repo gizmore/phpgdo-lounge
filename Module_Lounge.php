@@ -60,7 +60,7 @@ final class Module_Lounge extends GDO_Module
             GDT_Port::make('lounge_port')->initial('6667'),
 			GDT_Checkbox::make('lounge_tls')->initial('0'),
 			GDT_String::make('lounge_channel')->initial('#wechall'),
-            GDT_Url::make('lounge_url')->allowExternal()->reachable(),
+            GDT_Url::make('lounge_url')->allowExternal()->reachable()->initial('//'.GDO_DOMAIN.':9000'),
             GDT_MD5::make('lounge_config_hash'),
 		];
 	}
@@ -78,7 +78,7 @@ final class Module_Lounge extends GDO_Module
 
     public function onInitSidebar(): void
 	{
-        GDT_Page::instance()->leftBar()->addField(GDT_Link::make()->text('module_lounge')->href($this->href('Chat')));
+        GDT_Page::instance()->leftBar()->addField(GDT_Link::make()->text('module_lounge')->href($this->cfgURL()));
 	}
 
 }
