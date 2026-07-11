@@ -1,0 +1,3 @@
+[submodule "thelounge"]
+	path = thelounge
+	url = https://github.com/thelounge/thelounge
